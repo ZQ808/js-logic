@@ -34,7 +34,7 @@ function canVote(age){
 
   if (age >= 16) {
     return true;
-  } else {
+  }else{
     return false;
   }
 }
@@ -44,8 +44,10 @@ console.log("willVote:", willVote);
 
 function willDrive (age){
 
-  if (age >= 16) {return true}
-    else {false};
+  if (age >= 16) {
+    return true;
+  }else{
+    return false;}
 }
 var goodDriver = willDrive(18);
 console.log("goodDriver:", goodDriver);
@@ -64,8 +66,10 @@ console.log("goodDriver:", goodDriver);
 
 function login(password){
 
-  if ( password === "test1234" ) {return "Login Success!";
-}else{return "Login Failure - Commence Security Shutdown Procedures..."}
+  if ( password === "test1234" ) {
+    return "Login Success!";
+}else{
+  return "Login Failure - Commence Security Shutdown Procedures...";}
 }
 var lockSmith = login("test1234");
 console.log("lockSmith:", lockSmith);
@@ -73,7 +77,10 @@ console.log("lockSmith:", lockSmith);
 
 function moreLogin (password){
 
-  if (password === "brokenfixie1887") { return "Security Clearance Accepted!"} else { return "Password Incorrect!"}
+  if (password === "brokenfixie1887") {
+    return "Security Clearance Accepted!";
+  }else{
+   return "Password Incorrect!";}
 }
 var myLockedbox = moreLogin("brokenfixie1887");
 console.log("myLockedbox:", myLockedbox);
@@ -93,13 +100,15 @@ console.log("myLockedbox:", myLockedbox);
 
 function isGreaterThan (first, second){
 
-if (first > second) {return true;
+if (first > second) {
+  return true;
 }else{ 
   return false;
 }
 var moreThan = isGreaterThan(8 < 13);
 console.log("moreThan:", moreThan);
 }
+
 /*
  * #4
  * Function - mustBeTrue
@@ -121,7 +130,7 @@ if(boo===true) {
 }
 }
 var gottaBetrue = mustBeTrue(true);
-console.log("gottaBetrue:");
+console.log("gottaBetrue:", gottaBetrue);
 
 /*
  * #5
@@ -164,7 +173,7 @@ function isEqual(first, second){
 }
 
 }
-var soEqual = isEqual("first");
+var soEqual = isEqual("pirates", "treasure");
 console.log("soEqual;", soEqual);
 
 /*
@@ -188,7 +197,7 @@ function notEqual(first, second){
 }
 }
 
-var bigEqual = notEqual("second");
+var bigEqual = notEqual("second", "twenty");
 console.log("bigEqual:", bigEqual);
 
 /*
@@ -205,15 +214,26 @@ console.log("bigEqual:", bigEqual);
 
 function spareChange(money){
 
-if (money) {return true;
+if (money>100) {return true;
 }else{
   return false;
 }
 
 }
 
-var moreChange = spareChange("money");
+var moreChange = spareChange(113);
 console.log("moreChange:", moreChange);
+
+
+function someChange(cash){
+
+  if (cash>350) {return true;
+}else{
+    return false;
+}
+}
+var bigChange = someChange(408);
+console.log("bigChange:", bigChange);
 
 /*
  * #9
@@ -353,6 +373,7 @@ var doughnutPrice = 5;
 var doughnutBought = 0;
 
 function buyDoughnut(){
+
 if (budget >= doughnutPrice){
   budget -= doughnutPrice;
   doughnutBought++;
@@ -360,8 +381,24 @@ if (budget >= doughnutPrice){
 }
 
 buyDoughnut();
-console.log(budget);
-console.log(doughnutBought);
+console.log("budget:", budget);
+console.log("doughnutBought:", doughnutBought);
+
+buyDoughnut(1);
+console.log("budget:", budget);
+console.log("doughnutBought:", doughnutBought);
+
+buyDoughnut(2);
+console.log("budget:", budget);
+console.log("doughnutBought:", doughnutBought);
+
+buyDoughnut(3);
+console.log("budget:", budget);
+console.log("doughnutBought:", doughnutBought);
+
+buyDoughnut(4);
+console.log("budget:", budget);
+console.log("doughnutBought:", doughnutBought);
 
 /*
 For loops - A for loop checks a condition a specific number of times and allows us to execute a code block and evaluate a condition to determine if our loop should run again.
@@ -379,7 +416,7 @@ for (var i = 0; i<toyotaModels.length; i++){
    console.log("Toyota " + toyotaModels[i]);
 }
 
-var yamahaModels = ["FZ07", "FZ09", "R3", "R6", "R1"];
+var yamahaModels = [" FZ07", " FZ09", " R3", " R6", " R1"];
 
 for (var i = 0; i<yamahaModels.length; i++){
 
@@ -427,11 +464,12 @@ for(var i = 0; i<myFavFoods.length; i++){
 */
 
 var numArray = [8, 13, 23, 46, 88];
-var total = [0];
+
 
 function sumItUp(arr) {
 
   for (var i=0; i<arr.length; i++){
+    var total = 0;
 console.log(arr[i]);
     total += arr[i];
   }return total;
@@ -492,6 +530,29 @@ stars(planets);
 console.log("some:", some);
 console.log("more:", more);
 
+
+var cars = ["Chevy", "Honda", "Dodge", "Toyota", "Ford","Nissan"];
+
+var Japanese = [];
+var American = [];
+
+function autos(wheels){
+
+  for (var i=0; i<cars.length; i++){
+
+    console.log(wheels[i]);
+  if (i%2===0){
+Japanese.push(wheels[i]);
+}else{
+  American.push(wheels[i]);
+
+  }
+  }
+}
+autos(cars);
+console.log(Japanese);
+console.log(American);
+
 /*
  * #19
  * Function - subways
@@ -519,7 +580,7 @@ if(i%2===1){
 return special;
 }
 subways(subOftheDay);
-console.log(subOftheDay);
+console.log("subOftheDay:", subOftheDay);
 
 /*
 Final Boss
@@ -533,4 +594,19 @@ Final Boss
  *  The function will loop through the string value and put all the letters into an array, except for the letter "A" and "a". We don't want no stinking "A" or "a" in our array. Test your function with the `phrase` below!
 */
 
+var phrase = "An apple a day keeps Alice feeling awesome!";
 
+function removeLetter(str){
+
+var newArr = [];
+for (var i = 0; i<str.length; i++){
+  console.log(str[i]);
+  if(str[i]!=="a" && str[i]!=="A"){
+    newArr.push(str[i]);
+  }
+}
+console.log(newArr);
+return newArr;
+}
+
+removeLetter(phrase);
